@@ -1,0 +1,13 @@
+# Application dependencies
+
+require:
+    - com.force.api -> force-wsc 24.0.0
+    - com.force.api -> force-partner-api 24.0.0
+    - com.force.api -> force-metadata-api 24.0.0
+    - com.force.api -> force-rest-api 0.0.16
+repositories:
+    - forcerestapi:
+        type: iBiblio
+        root: "http://jesperfj.github.com/force-rest-api/repository/"
+        contains:
+            - com.force.api -> force-rest-api

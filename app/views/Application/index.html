@@ -1,0 +1,13 @@
+#{extends 'main.html' /}
+#{set title:'Login to Salesforce.com' /}
+<div class="container">
+	<div class="row">
+		<div class="span10 offset1 well">
+			<form action="https://api-dot-com.herokuapp.com/login" method="POST">
+				<input type="text" class="input-small" placeholder="Email">
+  				<input type="password" class="input-small" placeholder="Password">
+  				<button type="submit" class="btn">Sign in</button>
+			</form>
+		</div>
+	</div>
+</div>
