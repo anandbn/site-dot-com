@@ -21,7 +21,7 @@
                       key: '${session.get("chatter_key")}'
                     },
                     function(data) {
-                      demobox.html("<div class='alert alert-success'>Chatter Items:<b>"+data.items.length+"</b></div>");
+                      demobox.html("<div class='alert alert-success'>Chatter Response:<b>"+JSON.stringify(data)+"</b></div>");
                       console.log(data);
                       $('#' + id + ' #loading').hide();
                     });

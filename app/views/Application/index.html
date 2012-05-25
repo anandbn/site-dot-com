@@ -2,12 +2,28 @@
 #{set title:'Login to Salesforce.com' /}
 <div class="container">
 	<div class="row">
-		<div class="span10 offset1 well">
-			<form action="https://api-dot-com.herokuapp.com/login" method="POST">
-				<input type="text" class="input-small" placeholder="Email">
-  				<input type="password" class="input-small" placeholder="Password">
-  				<button type="submit" class="btn">Sign in</button>
-			</form>
+		<div class="span10 offset1">
+			<form class="well form-vertical" action="https://api-dot-com.herokuapp.com/login" method="POST">
+			<fieldset>
+           <div class="control-group">
+            <label class="control-label" for="username">Username:</label>
+            <div class="controls">
+              <input type="text" class="input-xlarge" id="username" name="username">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="password">Password:</label>
+            <div class="controls">
+              <input type="password" class="input-xlarge" id="password" name="password">
+              <p class="help-block">Include security token. Ensure you don't have IP restrictions on your profile</p>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+        </fieldset>
+        			</form>
 		</div>
 	</div>
 </div>
