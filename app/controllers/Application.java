@@ -14,7 +14,7 @@ public class Application extends Controller {
     }
     
     public static void loginSuccess(String key){
-    	response.setCookie("chatter_key", key, "site-dot-com.herokuapp.com", "/", 30*60*1000, true);
+    	session.put("chatter_key", key);
     	chatter();
     }
     

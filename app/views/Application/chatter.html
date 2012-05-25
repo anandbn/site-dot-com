@@ -5,23 +5,24 @@
  
     <script type="text/javascript">
  
- 
-   /* var JQFUNCS =
+    var JQFUNCS =
     {
         runFunc:
         {
+            /* ------------------------------ jsonp Demo ------------------------------ */
             "jsonp":
             {
                 run: function(id)
                 {
                     var demobox = $('#'+id);
                     demobox.html('<img id="loading" src="@{'/public//images/loading.gif'}">');
-                    $.getJSON("http://api-heroku.com.herokuapp.com/chatter?jsoncallback=?",
+                    $.getJSON("http://api-dot-com.herokuapp.com/chatter?jsoncallback=?",
                     {
-                      key: 
+                      key: '${session.get("chatter_key")}'
                     },
                     function(data) {
-                      demobox.html("<div class='alert alert-success'>Fedex Rate:<b>"+data"</b></div>");
+                      demobox.html("<div class='alert alert-success'>Chatter Items:<b>"+data.items.length+"</b></div>");
+                      console.log(data);
                       $('#' + id + ' #loading').hide();
                     });
                 },
@@ -33,31 +34,14 @@
             }
         }
     }
-    */
-    
-    function getCookie(c_name)
-	{
-		var i,x,y,ARRcookies=document.cookie.split(";");
-		for (i=0;i<ARRcookies.length;i++)
-		{
-		  x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-		  y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-		  x=x.replace(/^\s+|\s+$/g,"");
-		  if (x==c_name)
-		  {
-		    return unescape(y);
-		  }
-		}
-	}
-    alert("Cookie value is"+getCookie("chatter_key"));
  
     </script>
 #{/set} 
 
 <div class="row well">
 <div class="span8 offset-2">
-<p class="example">Demo: JSON P to load data from Chatter</p>
-<p><a href="#" id="jsonp-demobtn" class="demobtn btn actionr btn-success btn large">Get Chatter Data</a> 
+<p class="example">Demo: JSON P to chatter data to the Chrome browse console</p>
+<p><a href="#" id="jsonp-demobtn" class="demobtn btn actionr btn-success btn large">Get Chatter data</a> 
 <a href="#" id="jsonp-resetbtn" class="resetbtn btn btn-danger actionr" style="display: none;">Reset</a></p>
 <div class="demoarea" id="jsonp" style="display:inline-block" class="well span8 offset-2"></div>
 </div> 
