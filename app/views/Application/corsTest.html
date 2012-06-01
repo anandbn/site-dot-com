@@ -1,0 +1,22 @@
+#{extends 'main.html' /}
+#{set title:'Login to Salesforce.com' /}
+#{set 'moreScripts'}
+<script type="text/javascript">
+function callApi(){
+	alert('Calling CORS request to api-dot-com.herokuapp.com');
+	$.get(	'http://api-dot-com.herokuapp.com/chatterWithCors', 
+			{requestStr: 'Anand'}, 
+			function(d){
+				console.log(d);
+			}
+	);
+}
+</script>
+#{/set}
+<div class="container">
+	<div class="row">
+		<div class="span10 offset1">
+			<a class="btn btn-primary" href="javascript:callApi()">Link</a>
+		</div>
+	</div>
+</div>
