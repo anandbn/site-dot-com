@@ -21,5 +21,9 @@ public class Application extends Controller {
     public static void chatter(){
     	render();
     }
+    
+    public static void corsTest(){
+    	render();
+    }
 
 }
